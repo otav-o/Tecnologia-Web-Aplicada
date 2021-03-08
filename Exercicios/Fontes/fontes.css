@@ -1,0 +1,12 @@
+h1 {
+    font-family: Calibri;
+    font-size: 7;
+    text-indent: center;
+}
+
+p, li {
+    font-family: Calibri;
+    font-size: 4;
+    text-indent: 5px;
+    text-align: justify;
+}
