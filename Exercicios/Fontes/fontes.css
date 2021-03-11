@@ -10,3 +10,13 @@ p, li {
     text-indent: 5px;
     text-align: justify;
 }
+
+.negItalico {
+    font-style: italic;
+    font-weight: 900;
+}
+
+.negSub {
+    text-decoration: underline;
+    font-weight: 900;
+}
