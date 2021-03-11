@@ -11,12 +11,14 @@ p, li {
     text-align: justify;
 }
 
-.negItalico {
-    font-style: italic;
+.negrito {
     font-weight: 900;
 }
 
-.negSub {
+.sublinhado {
     text-decoration: underline;
-    font-weight: 900;
+}
+
+.italico {
+    font-style: italic;
 }
