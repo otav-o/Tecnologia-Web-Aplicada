@@ -1,0 +1,54 @@
+@font-face {
+    font-family: fonteDaMiria;
+    src:url('fonte.ttf');
+}
+
+body {
+    font-size: 40px;
+    font-family: fonteDaMiria;
+    background-image: url(fundo.jpg);
+    background-repeat: no-repeat; 
+    /* repeat (padrão), repeat-y, repeat-x */
+    /* background-attachment: fixed; */
+    /* scroll (padrão), fixed (imagem rola junto), */
+    /* background-position: right bottom; */
+    /* left top (padrão), center center, etc  */
+    background-size: cover;
+    /* auto (padrão), length, porcentagem, contain (estica mantendo a proporção. Repete a imagem (exceto se tiver no-repeat), cover (estica o máximo possível, perdendo bordas), */
+}
+
+div {
+    width: 50%;
+    height: 500px;
+    transition: width 2s, height 2s;
+    background-image: url(pinguin.jpg);
+}
+
+div:hover {
+    width: 100%;
+    height: 800px;
+    opacity: 0.5;
+    /* 0 a 1 */
+}
+
+header {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    /* background-color: navy; */
+    background: linear-gradient(to right, blue, red, yellow, purple 50%);
+    background: radial-gradient;
+}
+
+p {
+    text-indent: 2cm;
+    text-align: justify;
+    transition: text-shadow, font-size 1s;
+}
+
+p:hover {
+    text-shadow: 5px 5px 5px red;
+    /* horizontal, vertical, espalhamento */
+    font-size: 3em;
+
+}
