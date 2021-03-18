@@ -1,0 +1,34 @@
+body {
+    background: #dee6f7;
+}
+
+header {
+    background: linear-gradient(to bottom, #5B78AE,#415E9B,#35508D);
+    color: white;
+    font-family: Helvetica;
+    margin-top: 0px;
+}
+
+.centro {
+    text-align: center;
+}
+
+div {
+    margin-left: 20%;
+    width: 60%;
+    background-color: white;
+}
+
+div h3 {
+    color: #4D68A2;
+    margin-bottom: 0px;
+}
+
+.pequeno {
+    font-size: small;
+    margin-top: 0px;
+}
+
+.azul {
+    color: #4D68A2;
+}
