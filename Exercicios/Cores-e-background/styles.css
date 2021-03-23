@@ -1,12 +1,22 @@
+@font-face {
+    font-family: minhaFonte;
+    src: url(klavika-bold.otf)
+}
+
 body {
     background: #dee6f7;
 }
 
-header {
+header h1 {
     background: linear-gradient(to bottom, #5B78AE,#415E9B,#35508D);
     color: white;
-    font-family: Helvetica;
+    font-family: minhaFonte;
     margin-top: 0px;
+    text-indent: 1%;
+}
+
+p {
+    white-space: pre-line; /*substituição do <br>*/
 }
 
 .centro {
