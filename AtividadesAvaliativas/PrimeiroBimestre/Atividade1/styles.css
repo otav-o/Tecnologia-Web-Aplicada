@@ -1,7 +1,6 @@
 body {
     background-color: rgb(217, 181, 252);
 }
-
 h1 {
     text-align: center;
     text-shadow: 5px 5px 10px blue;
@@ -12,19 +11,22 @@ li.menu {
     background-color: blueviolet;
     display: inline-block;
     text-align: center;
-    border-radius: 20px;
-    list-style-type: none;
     width: 20%;
+    margin: 2%;
+}
+li.menu:hover { /* se colocar espaço (li.menu :hover), aplica a elementos-filho de li.menu */
+    background-color: pink;
+    box-shadow: 5px -5px 10px black;
+}
+li.menu, li.menu:hover, section, footer {
+    border: 2px black solid;
+    border-radius: 20px;
 }
 section {
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px
+    text-align: justify;
 }
-footer {
-    margin-top: 30px;
-    border-color: rgb(22, 2, 41);
+section, footer {
+    margin: 3%;
     background-color: white;
-    border-radius: 20px;
-    padding: 20px
+    padding: 20px;
 }
