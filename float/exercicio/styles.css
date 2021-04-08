@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul {
+    list-style-type: none;
+    /* é no ul em que se remove o marcador */
+    /* margin: 0 auto; 
+        float atrapalha o margin 0 auto
+        margin 0 auto de 100% é continuar onde está*/
+    /* margin: 90%; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.menu ul li {
+    width: 20%;
+    height: 3em;
+    background-color: black;
+    float: left;
+    text-align: center;
+    margin: 1%;
+
+}
+
+.menu ul li a {
+    color: white;
+    display: block;
+    /* quando não coloca a largura, é 100%. O link ocupa todo o bloco, tornando toda a caixa clicável */
+    line-height: 3em;
+    /* a altura da linha é a mesma da do bloco, aí ele também alinha verticalmente */
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+
+.menu ul li a:hover {
+    background-color: gray;
+}
+

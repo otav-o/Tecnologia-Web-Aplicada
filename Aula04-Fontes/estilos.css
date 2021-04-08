@@ -1,4 +1,40 @@
+@font-face {
+    src:url('fontePersonalizada.ttf');
+    font-family:minhaFonte;
+}
+
 * {
     font-family: Segoe UI, Verdana, 'Comic Sans Ms';
+}
 
+ul li {
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    color: red;
+}
+
+.italico {
+    font-style: oblique;
+    color: green;
+}
+
+footer {
+    font: 0.8em small-caps;
+}
+
+strong {
+    font-weight: 900;
+}
+
+.direcaoRTL {
+    direction: rtl;
+}
+
+h1 {
+    letter-spacing: 15px; /* negativo aproxima */
+    
+}  
+
+p {
+    line-height: 150%; /* afastar uma linha da outra*/
 }

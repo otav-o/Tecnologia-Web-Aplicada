@@ -1,0 +1,31 @@
+main div {
+    /* display: inline-block; */
+    width: 40%;
+    height: 20em;
+    margin: 2%;
+    /* float: left; */
+    /* float: right; */
+    /* clear: both; */
+}
+
+.primeiro {
+    background-color: yellow;
+}
+.segundo {
+    background-color: blue;
+    bottom: 20px;
+    right: 15px;
+    position: absolute; 
+    /* 
+        relative: em relação ao elemento anterior
+        static: ignora top, left, right, bottom; 
+        fixed: mantém o elemento na coordenada definida, mesmo se rolar a página 
+        absolute: em relação ao início da página, não segue o elemento anterior
+    */
+}
+.terceiro {
+    background-color: red;
+}
+.quarto {
+    background-color: green;
+}

@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+}
+
+@font-face {
+	font-family: fonteFacebook;
+	src: url('klavika-bold.otf');
+}
+
+header h1 {
+	font-family: fonteFacebook;
+	size: 3em;
+	text-align: center;
+	text-shadow: 2px 2px 5px gray;
+	margin-top: 0px;
+	margin: 0 0 0 0;
+}
+
+header {
+	background-color: gray;
+	box-shadow: 10px 10px 10px 10px;
+	margin: 2% auto;
+	width: 40%;
+	height: 40%;
+}
+
+h1 {
+	line-height: auto;
+}
+
+
+
