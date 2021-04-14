@@ -1,0 +1,16 @@
+table {
+    border: rgb(0, 140, 150) 2px solid;
+    width: 100%
+}
+#titulo {
+    font-family: Cambria;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+#titulo .ano {
+    font-size: 50px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
