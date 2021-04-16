@@ -8,10 +8,20 @@ table {
     border: rgb(0, 140, 150) 2px solid;
     width: 100%
 }
+
 #titulo {
     font-family: Cambria;
     text-transform: uppercase;
     text-align: left;
+}
+
+.diaMes {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.realce {
+    font-weight: 900;
 }
 
 #titulo .ano {
@@ -38,13 +48,12 @@ table {
     color: var(--azul-escuro);
 }
 
-#tabela td:first-child {
-    text-align: left;
+#tabela tr:nth-child(odd) td:first-child {
     font-size: 30px;
     background-color: var(--azul-mais-claro);
 }
 
-#linhaDiaMes {
+#colunaDiaMes {
     color: var(--azul-escuro);
     background-color: var(--azul-mais-claro);
 }
