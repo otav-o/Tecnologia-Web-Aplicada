@@ -2,6 +2,7 @@
     --azul-escuro: #0669C5;
     --azul-claro: #A3DAF7;
     --azul-mais-claro: #D3EFFA;
+    --amarelo: #FFD400;
 }
 
 table {
@@ -41,6 +42,11 @@ table {
 #tabela tr:nth-child(even){
     background-color: var(--azul-escuro);
     color: white;
+}
+
+#tabela tr:nth-child(n):hover{
+    background-color: var(--amarelo);
+    color: var(--azul-escuro);
 }
 
 #tabela tr:nth-child(odd){
