@@ -24,7 +24,10 @@ function gerarTabela() {
 
         for (let j = 0; j < 13; j++) {
             var celula = linha.insertCell();
-            celula.innerHTML = `${i}<br> ${getMes(j)}`;
+            celula.innerHTML = `
+                <span class='diaMes'>${i}</span><br> 
+                <span class='mes'>${getMes(j)}</span>
+            `;
         }
     }
 }

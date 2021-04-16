@@ -1,3 +1,9 @@
+:root {
+    --azul-escuro: #0669C5;
+    --azul-claro: #A3DAF7;
+    --azul-mais-claro: #D3EFFA;
+}
+
 table {
     border: rgb(0, 140, 150) 2px solid;
     width: 100%
@@ -13,4 +19,32 @@ table {
     text-align: right;
     display: flex;
     flex-direction: column;
+}
+
+#tabela tr td {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+
+#tabela tr:nth-child(even){
+    background-color: var(--azul-escuro);
+    color: white;
+}
+
+#tabela tr:nth-child(odd){
+    background-color: var(--azul-claro);
+    color: var(--azul-escuro);
+}
+
+#tabela td:first-child {
+    text-align: left;
+    font-size: 30px;
+    background-color: var(--azul-mais-claro);
+}
+
+#linhaDiaMes {
+    color: var(--azul-escuro);
+    background-color: var(--azul-mais-claro);
 }
