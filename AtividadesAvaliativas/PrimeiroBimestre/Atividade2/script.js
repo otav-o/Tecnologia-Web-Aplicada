@@ -19,7 +19,7 @@ var getMes = (numero) => {
 function gerarTabela() {
     var tabela = document.getElementById('tabela');
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 9; i > -1; i--) {
         var linha = tabela.insertRow();
 
         for (let j = 0; j < 13; j++) {
