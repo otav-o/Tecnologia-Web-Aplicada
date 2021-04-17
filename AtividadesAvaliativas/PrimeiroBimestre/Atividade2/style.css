@@ -17,6 +17,10 @@ table {
     width: 100%
 }
 
+td {
+    width: calc(100%/13);
+}
+
 .cabecalho {
     color: white;
     background-color: var(--azul-escuro);
