@@ -8,10 +8,54 @@
     src: url('fonts/akzidenz-grotesk-light.ttf');
 }
 
+body, ul {
+    margin: 0;
+}
+
 body {
     background-image: url('img/fundo.jpg');
     background-repeat: no-repeat;
     background-clip: border-box;
+}
+
+header .logo {
+    float: left;
+    margin-left: 5.5em;
+    margin-top: 0.2em;
+}
+
+header {
+    height: 19em;
+    background-image: url('img/header-home-v2--br.jpg');
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+nav ul {
+    border-top: 4px solid #F0C43F;
+    text-align: right;
+    background-image: linear-gradient(to bottom, #cacaca, #EEF0F1,#F7F7F7, #FDFDFD);
+    line-height: 3em;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    width: 10%;
+    cursor: pointer;
+    text-align: center;
+    border-left: 2px solid #bbbbbf;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1em;
+}
+
+.nav-img {
+    vertical-align: middle;
 }
 
 h1, h3 {
@@ -19,7 +63,7 @@ h1, h3 {
     text-align: center;
 }
 
-header h1 {
+section h1 {
     text-transform: uppercase;
     margin-bottom: 50px;
 }
