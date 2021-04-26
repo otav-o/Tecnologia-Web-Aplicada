@@ -1,0 +1,22 @@
+.tabela {
+    font-size: 2em;
+    margin: 0 auto;
+    border-collapse: collapse; /* deixa a borda simples */
+    text-align: center;
+    width: 50%;
+    table-layout: auto; 
+}
+
+table tr {
+    border: 2px dotted green;
+    /* só funciona com border-collapse: collapse */
+}
+
+table td {
+    width: 20%;
+}
+
+td:nth-child(1) { /* primeiro filho de td */
+    width: 5%;
+}
+
