@@ -5,7 +5,10 @@
 */
 
 var n = parseInt(prompt("Digite um número"));
-console.log(Math.sqrt(n));
+
+const raizQuadrada = (n) => console.log(Math.sqrt(n));
+
+raizQuadrada(n);
 
 
 /*
