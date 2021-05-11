@@ -5,15 +5,22 @@
 */
 
 const raizQuadrada = () => {
-    let n = prompt("Digite um número");
-    alert(Math.sqrt(n))
+    let n = parseInt(prompt("Digite um número"));
+    if (n >= 0 && 
+        typeof n === 'number' && 
+        isNaN(n) == false)
+        alert(Math.sqrt(n))
+    else {
+        alert('Não foi possível calcular')
+        raizQuadrada();
+    }
 };
 
 /*
     Crie código em Javascript que receba dois números e mostre a média entre eles.
 */
 
-const calculaMedia = (...numeros) => {
+const calculaMedia = () => {
     const n1 = parseFloat(prompt("Primeiro número"));
     const n2 = parseFloat(prompt("Segundo número número"));
     alert((n1 + n2) / 2);
@@ -25,7 +32,10 @@ const calculaMedia = (...numeros) => {
 
 function quantidadeLetras() {
     let palavra = prompt("Digite algo");
-    alert(`"${palavra}" tem ${palavra.length} letras!`);
+    if (palavra.length != 0) // == compara independente do tipo, === compara valor e tipo
+        alert(`"${palavra}" tem ${palavra.length} letras!`);
+    else
+        throw 'Nada foi digitado';
 }
 
 /*
