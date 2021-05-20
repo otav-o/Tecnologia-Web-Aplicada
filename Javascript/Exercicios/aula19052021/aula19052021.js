@@ -31,6 +31,21 @@ var opcaoMarcada = document.getElementById('formulario').value;
 
 /*2. Escreva um código para calcular a média de N números. Utilize uma janela de prompt para receber os números separados por vírgula. Exiba o resultado em uma janela de alerta.*/
 
+const media = (nums) => 
+(nums.reduce((a, b) => a + b, 0)) / nums.length;
+
+function exercicio2 ()
+{    
+    let strNumeros = prompt('Digite os números separando por vírgula');
+
+    let numeros = strNumeros.split(',')
+        .map(n => parseInt(n));
+
+    console.log(numeros);
+    console.log(media(numeros));
+
+    alert(`Os números digitados são ${numeros} e a média entre eles é ${media(numeros)}`)
+}
  
 
 /*3. Escreva um código em JS que leia um valor inteiro (aceitar somente valores entre 1 e 10). Escreva a tabuada de 1 a 10 do número lido.*/
