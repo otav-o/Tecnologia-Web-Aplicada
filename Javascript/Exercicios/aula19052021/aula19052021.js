@@ -23,6 +23,12 @@ document.getElementById('pares').innerHTML = numerosPares;
 
 console.log(numerosPares);
 
+const rodarQuestao = () => {
+    if (document.getElementById('q2').checked)
+        exercicio2();
+}
+var opcaoMarcada = document.getElementById('formulario').value;
+
 /*2. Escreva um código para calcular a média de N números. Utilize uma janela de prompt para receber os números separados por vírgula. Exiba o resultado em uma janela de alerta.*/
 
  
