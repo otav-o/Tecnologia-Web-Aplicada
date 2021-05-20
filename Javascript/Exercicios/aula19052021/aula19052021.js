@@ -28,6 +28,8 @@ const rodarQuestao = () => {
         exercicio2();
     else if (document.getElementById('q3').checked)
         exercicio3();
+    else if (document.getElementById('q4').checked)
+        exercicio4();
 }
 var opcaoMarcada = document.getElementById('formulario').value;
 
@@ -68,3 +70,17 @@ const gerarTabuada = numero => {
 
 /*4. Escreva um código que receba a data de nascimento de uma pessoa. Em seguida, calcule a idade da pessoa e diga se ela é maior de idade(idade maior ou igual a 18 anos) ou menor de idade(idade menor que 18 anos).
 OBS: Lembre-se que para calcular a idade de alguém basta subtrair o ano atual pelo ano de nascimento da pessoa, porém, caso o dia e o mês atual sejam menores que o dia e o mês de nascimento, a pessoa ainda não fez aniversário. Nesse caso, temos que subtrair 1 do ano*/
+
+function exercicio4() {
+    let data = new Date(prompt('Digite sua data de nascimento'));
+    console.log(data);
+    let idade = calcularIdade(data);
+    alert(`Você tem ${idade} anos e ${idade > 18 ? 'é' : 'não é'} maior de idade`)
+}
+
+const calcularIdade = (data) => {
+    let diferencaEmMilissegundos = new Date() - data;
+    let diferencaEmAnos = diferencaEmMilissegundos / (3600 * 24 * 365 * 1000);
+    console.log(diferencaEmAnos);
+    return Math.floor(diferencaEmAnos);
+}
