@@ -26,6 +26,8 @@ console.log(numerosPares);
 const rodarQuestao = () => {
     if (document.getElementById('q2').checked)
         exercicio2();
+    else if (document.getElementById('q3').checked)
+        exercicio3();
 }
 var opcaoMarcada = document.getElementById('formulario').value;
 
@@ -49,6 +51,20 @@ function exercicio2 ()
  
 
 /*3. Escreva um código em JS que leia um valor inteiro (aceitar somente valores entre 1 e 10). Escreva a tabuada de 1 a 10 do número lido.*/
+
+function exercicio3() {
+    let numero = parseInt(prompt('Digite um número inteiro entre 0 e 10'));
+    if (numero < 0 || numero > 10) 
+        throw 'Número inválido';
+    alert(gerarTabuada(numero));
+}
+
+const gerarTabuada = numero => {
+    let retorno = '';
+    for (let i = 1; i < 11; i++)
+        retorno += `${numero} x ${i} = ${numero * i}\n`;
+    return retorno;
+}
 
 /*4. Escreva um código que receba a data de nascimento de uma pessoa. Em seguida, calcule a idade da pessoa e diga se ela é maior de idade(idade maior ou igual a 18 anos) ou menor de idade(idade menor que 18 anos).
 OBS: Lembre-se que para calcular a idade de alguém basta subtrair o ano atual pelo ano de nascimento da pessoa, porém, caso o dia e o mês atual sejam menores que o dia e o mês de nascimento, a pessoa ainda não fez aniversário. Nesse caso, temos que subtrair 1 do ano*/
