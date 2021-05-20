@@ -8,7 +8,6 @@ const gerarAleatorioAte100 = () => {
 
 console.log(gerarAleatorioAte100());
 
-let quantidadePares = 0;
 let numerosSorteados = Array();
 let numerosPares = Array();
 
@@ -18,12 +17,15 @@ while (numerosPares.length < 10) {
     if (numero % 2 == 0) 
         numerosPares.push(numero);
 }
-console.log(numerosSorteados);
+
+document.getElementById('aleatorios').innerHTML = numerosSorteados;
+document.getElementById('pares').innerHTML = numerosPares;
+
 console.log(numerosPares);
 
 /*2. Escreva um código para calcular a média de N números. Utilize uma janela de prompt para receber os números separados por vírgula. Exiba o resultado em uma janela de alerta.*/
 
-const media = () => 
+ 
 
 /*3. Escreva um código em JS que leia um valor inteiro (aceitar somente valores entre 1 e 10). Escreva a tabuada de 1 a 10 do número lido.*/
 
