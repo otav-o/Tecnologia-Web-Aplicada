@@ -1,0 +1,28 @@
+div {
+  width: 50%;
+  margin: 2% auto;
+  border: 5px solid black;
+  text-align: center;
+  background-color: silver;
+}
+
+h2 {
+  text-align: center;
+}
+
+input {
+  width: 23% !important;
+  margin: 2% !important;
+  display: inline-block !important;
+}
+
+select {
+  width: 10% !important;
+  display: inline-block !important;
+}
+
+label {
+  font-size: 2em;
+  font-weight: bold;
+  vertical-align: middle;
+}
