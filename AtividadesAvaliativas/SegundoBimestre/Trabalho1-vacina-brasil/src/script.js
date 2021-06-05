@@ -3,6 +3,24 @@ const inicio = () => {
   gerarPagina1();
 };
 
+const gerarPagina2 = () => {
+  document.getElementById("principal").remove();
+  gerarElemento({
+    tag: "main",
+    id: "principal",
+    idPai: "divPrincipal",
+    classe: "segundaPagina",
+  });
+  gerarElemento({
+    tag: "div",
+    id: "divSegunda",
+    idPai: "principal",
+  });
+  document
+    .getElementById("rodape")
+    .before(document.getElementById("principal"));
+};
+
 const gerarPagina1 = () => {
   gerarElemento({ tag: "div", id: "divPrimeira", idPai: "principal" });
   // main possui id 'principal'
@@ -53,9 +71,9 @@ const gerarElemento = ({ tag, id, idPai, classe, conteudo }) => {
 
   if (idPai) {
     let parent = document.getElementById(idPai);
-    parent.appendChild(elemento);
+    parent.append(elemento);
   } else {
-    document.body.appendChild(elemento);
+    document.body.append(elemento);
   }
 };
 
@@ -64,7 +82,7 @@ const adicionarImagem = (nome, idPai) => {
   imagem.setAttribute("src", `${caminho + nome}`);
 
   let parent = document.getElementById(idPai);
-  parent.appendChild(imagem);
+  parent.append(imagem);
 };
 
 var caminho = "img/";
