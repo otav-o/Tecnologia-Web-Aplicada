@@ -11,7 +11,14 @@ const inicio = () => {
     classe: "marquee",
   });
 
-  gerarElemento({ tag: "div", idPai: 'rodape', conteudo: "Disque Coronavírus" });
+  gerarElemento({
+    tag: "div",
+    idPai: "rodape",
+    conteudo: "Disque Coronavírus",
+  });
+
+  adicionarImagem("telefone.png", "rodape");
+  gerarElemento({ tag: "span", conteudo: "0800 400-1234", idPai: "rodape" });
 };
 
 const gerarElemento = ({ tag, id, idPai, classe, conteudo }) => {
