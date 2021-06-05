@@ -9,6 +9,15 @@ const gerarPagina1 = () => {
   document.getElementById("principal").setAttribute("class", "primeiraPagina");
 
   adicionarImagem("cabecalho.png", "divPrimeira");
+
+  gerarElemento({
+    tag: "button",
+    id: "acesso",
+    conteudo: "Primeiro Acesso",
+    idPai: "divPrimeira",
+  });
+
+  document.getElementById("acesso").setAttribute("onClick", "gerarPagina2()");
 };
 
 const gerarEstruturaBasica = () => {
