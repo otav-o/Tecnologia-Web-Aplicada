@@ -4,13 +4,23 @@ const inicio = () => {
   adicionarImagem("logo.png", "cabecalho");
 
   gerarElemento({ tag: "main", id: "principal", idPai: "divPrincipal" });
+  gerarElemento({
+    tag: "footer",
+    id: "rodape",
+    idPai: "divPrincipal",
+    classe: "marquee",
+  });
+
+  gerarElemento({ tag: "div", idPai: 'rodape', conteudo: "Disque Coronavírus" });
 };
 
-const gerarElemento = ({ tag, id, idPai, classe }) => {
+const gerarElemento = ({ tag, id, idPai, classe, conteudo }) => {
   let elemento = document.createElement(tag);
 
   if (id) elemento.setAttribute("id", id);
   if (classe) elemento.setAttribute("class", classe);
+
+  if (conteudo) elemento.innerText = conteudo;
 
   if (idPai) {
     let parent = document.getElementById(idPai);
