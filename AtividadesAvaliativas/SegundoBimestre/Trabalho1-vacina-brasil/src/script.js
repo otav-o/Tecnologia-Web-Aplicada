@@ -35,6 +35,8 @@ const gerarPagina2 = async () => {
     idPai: "divSegunda",
     conteudo: await obterTxt("../alerta.txt"),
   });
+
+  criarLabels(await obterLinhas("../texto.txt"));
 };
 
 const gerarPagina1 = () => {
@@ -102,11 +104,27 @@ const adicionarImagem = (nome, idPai) => {
   parent.append(imagem);
 };
 
-var caminho = "img/";
-
 const obterTxt = async (arquivo) => {
   const response = await fetch(arquivo);
   const texto = await response.text();
   console.log(texto);
   return texto;
 };
+
+const obterLinhas = async (arquivo) => {
+  const texto = await obterTxt(arquivo);
+  return texto.split("\n");
+};
+
+const criarLabels = (linhas) => {
+  linhas.forEach((linha) => {
+    gerarElemento({
+      tag: "label",
+      classe: "titulos",
+      conteudo: linha,
+      idPai: "divSegunda",
+    });
+  });
+};
+
+var caminho = "img/";
