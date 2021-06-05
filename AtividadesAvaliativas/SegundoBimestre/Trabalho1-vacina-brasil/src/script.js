@@ -36,7 +36,8 @@ const gerarPagina2 = async () => {
     conteudo: await obterTxt("../alerta.txt"),
   });
 
-  criarLabels(await obterLinhas("../texto.txt"));
+  // TODO: Consertar a formatação e agrupar por names
+  criarLabelsEInputs(await obterLinhas("../texto.txt"));
 };
 
 const gerarPagina1 = () => {
@@ -116,8 +117,16 @@ const obterLinhas = async (arquivo) => {
   return texto.split("\n");
 };
 
-const criarLabels = (linhas) => {
+const criarLabelsEInputs = (linhas) => {
   linhas.forEach((linha) => {
+    criarInput({
+      tipo: "radio",
+      // Está errado pois os names precisam ser diferentes
+      nome: "categoria",
+      valor: linha,
+      idPai: "divSegunda",
+    });
+
     gerarElemento({
       tag: "label",
       classe: "titulos",
@@ -125,6 +134,15 @@ const criarLabels = (linhas) => {
       idPai: "divSegunda",
     });
   });
+};
+
+const criarInput = ({ tipo, nome, valor, idPai }) => {
+  let elemento = document.createElement("input");
+  elemento.setAttribute("type", tipo);
+  elemento.setAttribute("name", nome);
+  elemento.setAttribute("value", valor);
+
+  document.getElementById(idPai).append(elemento);
 };
 
 var caminho = "img/";
