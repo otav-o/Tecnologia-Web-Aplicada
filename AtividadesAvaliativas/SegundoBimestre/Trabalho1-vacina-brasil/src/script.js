@@ -1,4 +1,17 @@
 const inicio = () => {
+  gerarEstruturaBasica();
+  gerarPagina1();
+};
+
+const gerarPagina1 = () => {
+  gerarElemento({ tag: "div", id: "divPrimeira", idPai: "principal" });
+  // main possui id 'principal'
+  document.getElementById("principal").setAttribute("class", "primeiraPagina");
+
+  adicionarImagem("cabecalho.png", "divPrimeira");
+};
+
+const gerarEstruturaBasica = () => {
   gerarElemento({ tag: "div", id: "divPrincipal" });
   gerarElemento({ tag: "header", id: "cabecalho", idPai: "divPrincipal" });
   adicionarImagem("logo.png", "cabecalho");
