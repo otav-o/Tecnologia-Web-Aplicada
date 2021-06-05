@@ -1,12 +1,16 @@
 const inicio = () => {
-  gerarElemento("div", "divPrincipal");
-  gerarElemento("header", "cabecalho", "divPrincipal");
+  gerarElemento({ tag: "div", id: "divPrincipal" });
+  gerarElemento({ tag: "header", id: "cabecalho", idPai: "divPrincipal" });
   adicionarImagem("logo.png", "cabecalho");
+
+  gerarElemento({ tag: "main", id: "principal", idPai: "divPrincipal" });
 };
 
-const gerarElemento = (tag, id, idPai) => {
+const gerarElemento = ({ tag, id, idPai, classe }) => {
   let elemento = document.createElement(tag);
-  elemento.setAttribute("id", id);
+
+  if (id) elemento.setAttribute("id", id);
+  if (classe) elemento.setAttribute("class", classe);
 
   if (idPai) {
     let parent = document.getElementById(idPai);
