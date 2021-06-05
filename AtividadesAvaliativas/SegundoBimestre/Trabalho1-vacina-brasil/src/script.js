@@ -38,6 +38,27 @@ const gerarPagina2 = async () => {
 
   // TODO: Consertar a formatação e agrupar por names
   criarLabelsEInputs(await obterLinhas("../texto.txt"));
+
+  gerarElemento({
+    tag: "button",
+    classe: "verde",
+    conteudo: "Continuar",
+    idPai: "divSegunda",
+    id: "botaoTerceiraPagina",
+  });
+
+  gerarElemento({
+    tag: "button",
+    conteudo: "Voltar",
+    idPai: "divSegunda",
+    id: "voltar",
+  });
+
+  document
+    .getElementById("botaoTerceiraPagina")
+    .setAttribute("onclick", "gerarPagina3()");
+
+  document.getElementById("voltar").setAttribute("onclick", "gerarPagina1()");
 };
 
 const gerarPagina1 = () => {
