@@ -3,26 +3,43 @@ const inicio = () => {
   gerarPagina1();
 };
 
-const gerarPagina2 = () => {
+const gerarPagina2 = async () => {
   document.getElementById("principal").remove();
+
   gerarElemento({
     tag: "main",
     id: "principal",
     idPai: "divPrincipal",
     classe: "segundaPagina",
   });
+
   gerarElemento({
     tag: "div",
     id: "divSegunda",
     idPai: "principal",
   });
+
   document
     .getElementById("rodape")
     .before(document.getElementById("principal"));
+
+  gerarElemento({
+    tag: "h1",
+    conteudo: "Identificação",
+    idPai: "divSegunda",
+  });
+
+  gerarElemento({
+    tag: "div",
+    id: "divAlerta",
+    idPai: "divSegunda",
+    conteudo: await obterTxt("../alerta.txt"),
+  });
 };
 
 const gerarPagina1 = () => {
   gerarElemento({ tag: "div", id: "divPrimeira", idPai: "principal" });
+
   // main possui id 'principal'
   document.getElementById("principal").setAttribute("class", "primeiraPagina");
 
@@ -86,3 +103,10 @@ const adicionarImagem = (nome, idPai) => {
 };
 
 var caminho = "img/";
+
+const obterTxt = async (arquivo) => {
+  const response = await fetch(arquivo);
+  const texto = await response.text();
+  console.log(texto);
+  return texto;
+};
