@@ -1,6 +1,7 @@
 const inicio = () => {
   gerarElemento("div", "divPrincipal");
   gerarElemento("header", "cabecalho", "divPrincipal");
+  adicionarImagem("logo.png", "cabecalho");
 };
 
 const gerarElemento = (tag, id, idPai) => {
@@ -14,3 +15,13 @@ const gerarElemento = (tag, id, idPai) => {
     document.body.appendChild(elemento);
   }
 };
+
+const adicionarImagem = (nome, idPai) => {
+  let imagem = document.createElement("img");
+  imagem.setAttribute("src", `${caminho + nome}`);
+
+  let parent = document.getElementById(idPai);
+  parent.appendChild(imagem);
+};
+
+var caminho = "img/";
