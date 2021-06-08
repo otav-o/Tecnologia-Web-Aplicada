@@ -1,6 +1,7 @@
 function inicio() {
   let caixa = criarDiv("operacoes");
   criarTitulo(caixa, "Operações Matemáticas");
+  criarFormulario(caixa, "formulario");
 }
 
 const criarDiv = (id) => {
@@ -23,3 +24,22 @@ const criarTitulo = (elementoPai, conteudo) => {
   tag.innerHTML = conteudo;
   elementoPai.appendChild(tag);
 };
+
+const criarFormulario = (elementoPai, id) => {
+  elementoPai.appendChild(
+    document.createElement("form").setAttribute("id", id)
+  );
+};
+
+const criarLabel = () => {
+  let tag = document.createElement("label");
+  tag.setAttribute("for", "inputNumero");
+  tag.innerHTML = "Digite um número";
+  document.querySelector("#formulario").appendChild(tag);
+};
+
+tag = document.createElement("input");
+tag.setAttribute("class", "azul");
+tag.setAttribute("type", "number");
+tag.setAttribute("id", "inputNumero");
+tag.setAttribute("required", "true");

@@ -9,6 +9,9 @@ const inicio = () => {
   // ou usar objeto
   document.querySelector("form").setAttribute("method", "post");
   document.querySelector("form").setAttribute("action", "#");
+
+  createElement("input", "num1", "number", "", "form");
+  document.getElementById('num1').setAttribute('')
 };
 
 const criarElemento = (tag) => document.createElement(tag);

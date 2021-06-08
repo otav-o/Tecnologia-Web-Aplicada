@@ -58,6 +58,7 @@ const gerarPagina2 = async () => {
     .getElementById("botaoTerceiraPagina")
     .setAttribute("onclick", "gerarPagina3()");
 
+  // TODO: limpar a página no gerarPagina1()
   document.getElementById("voltar").setAttribute("onclick", "gerarPagina1()");
 };
 
