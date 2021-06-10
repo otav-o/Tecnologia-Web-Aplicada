@@ -3,6 +3,53 @@ const inicio = () => {
   gerarPagina1();
 };
 
+const gerarPagina3 = () => {
+  // TODO: Recuperar o conteúdo selecionado na página 2
+  // TODO: Exibir alerta se nada estiver selecionado ("Antes de prosseguir, você precisará selecionar uma opção! ")
+
+  document.getElementById("principal").remove();
+
+  gerarElemento({
+    tag: "main",
+    id: "principal",
+    idPai: "divPrincipal",
+    classe: "terceiraPagina",
+  });
+
+  gerarElemento({
+    tag: "div",
+    id: "divTerceira",
+    idPai: "principal",
+  });
+
+  document
+    .getElementById("rodape")
+    .before(document.getElementById("principal")); // seria legal isso virar um método
+
+  gerarElemento({
+    tag: "h1",
+    // TODO: Identificação + valor selecionado na tela anterior
+    conteudo: "Identificação",
+    idPai: "divTerceira",
+  });
+
+  gerarElemento({
+    tag: "label",
+    conteudo: "*Campos Obrigatórios",
+    idPai: "divTerceira",
+  });
+
+  gerarElemento({
+    tag: "form",
+    id: "formulario",
+    idPai: "divTerceira",
+  });
+
+  document
+    .getElementById("formulario")
+    .setAttribute("onsubmit", "alert('Formulário enviado com sucesso!')");
+};
+
 const gerarPagina2 = async () => {
   document.getElementById("principal").remove();
 
