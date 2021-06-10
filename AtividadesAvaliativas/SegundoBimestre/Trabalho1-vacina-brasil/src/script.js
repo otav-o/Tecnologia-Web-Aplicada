@@ -3,7 +3,7 @@ const inicio = () => {
   gerarPagina1();
 };
 
-const gerarPagina3 = () => {
+const gerarPagina3 = async () => {
   // TODO: Recuperar o conteúdo selecionado na página 2
   // TODO: Exibir alerta se nada estiver selecionado ("Antes de prosseguir, você precisará selecionar uma opção! ")
 
@@ -99,6 +99,46 @@ const gerarPagina3 = () => {
     required: true,
     classe: "maior",
   });
+
+  gerarElemento({
+    tag: "div",
+    id: "divAlerta",
+    idPai: "formulario",
+    conteudo: await obterTxt("../termo_de_aceite.txt"),
+  });
+
+  criarInput({
+    tipo: "checkbox",
+    nome: "aceite",
+    required: true,
+    idPai: "formulario",
+  });
+
+  gerarElemento({
+    tag: "label",
+    classe: "inline",
+    conteudo: "Li e concordo",
+    idPai: "formulario",
+  });
+
+  gerarElemento({
+    tag: "button",
+    classe: "verde",
+    conteudo: "Salvar",
+    idPai: "formulario",
+    id: "botaoSalvar",
+  });
+
+  document.getElementById("botaoSalvar").setAttribute("type", "submit");
+
+  gerarElemento({
+    tag: "button",
+    conteudo: "Voltar",
+    idPai: "formulario",
+    id: "voltar",
+  });
+
+  document.getElementById("voltar").setAttribute("onclick", "gerarPagina2()");
 };
 
 const gerarPagina2 = async () => {
