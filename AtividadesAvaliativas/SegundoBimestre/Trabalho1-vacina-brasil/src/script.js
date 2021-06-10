@@ -55,16 +55,12 @@ const gerarPagina3 = () => {
     idPai: "formulario",
   });
 
-  gerarElemento({
-    tag: "input",
+  criarInput({
+    tipo: "text",
     idPai: "formulario",
-    id: "inputCpf",
+    required: true,
+    placeholder: "___.___.___-__",
   });
-
-  let inputCpf = document.getElementById("inputCpf");
-  inputCpf.setAttribute("placeholder", "___.___.___-__");
-  inputCpf.setAttribute("type", "text");
-  inputCpf.required = true;
 
   gerarElemento({
     tag: "label",
@@ -72,15 +68,11 @@ const gerarPagina3 = () => {
     idPai: "formulario",
   });
 
-  gerarElemento({
-    tag: "input",
+  criarInput({
+    tipo: "date",
     idPai: "formulario",
-    id: "inputNascimento",
+    required: true,
   });
-
-  let inputNascimento = document.getElementById("inputNascimento");
-  inputNascimento.setAttribute("type", "date");
-  inputNascimento.setAttribute("required", "true");
 };
 
 const gerarPagina2 = async () => {
@@ -238,11 +230,21 @@ const criarLabelsEInputs = (linhas) => {
   });
 };
 
-const criarInput = ({ tipo, nome, valor, idPai }) => {
+const criarInput = ({
+  tipo,
+  nome,
+  valor,
+  idPai,
+  required = false,
+  placeholder,
+}) => {
   let elemento = document.createElement("input");
   elemento.setAttribute("type", tipo);
-  elemento.setAttribute("name", nome);
-  elemento.setAttribute("value", valor);
+  if (nome) elemento.setAttribute("name", nome);
+  if (valor) elemento.setAttribute("value", valor);
+  if (placeholder) elemento.setAttribute("placeholder", placeholder);
+
+  elemento.setAttribute("required", required);
 
   document.getElementById(idPai).append(elemento);
 };
