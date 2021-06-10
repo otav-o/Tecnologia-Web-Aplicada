@@ -73,6 +73,32 @@ const gerarPagina3 = () => {
     idPai: "formulario",
     required: true,
   });
+
+  gerarElemento({
+    tag: "label",
+    conteudo: "Nome completo<span class='asterisco'>*</span>",
+    idPai: "formulario",
+  });
+
+  criarInput({
+    tipo: "text",
+    idPai: "formulario",
+    required: true,
+    classe: "maior",
+  });
+
+  gerarElemento({
+    tag: "label",
+    conteudo: "Endereço completo<span class='asterisco'>*</span>",
+    idPai: "formulario",
+  });
+
+  criarInput({
+    tipo: "text",
+    idPai: "formulario",
+    required: true,
+    classe: "maior",
+  });
 };
 
 const gerarPagina2 = async () => {
@@ -237,12 +263,14 @@ const criarInput = ({
   idPai,
   required = false,
   placeholder,
+  classe,
 }) => {
   let elemento = document.createElement("input");
   elemento.setAttribute("type", tipo);
   if (nome) elemento.setAttribute("name", nome);
   if (valor) elemento.setAttribute("value", valor);
   if (placeholder) elemento.setAttribute("placeholder", placeholder);
+  if (classe) elemento.setAttribute("class", classe);
 
   elemento.setAttribute("required", required);
 
