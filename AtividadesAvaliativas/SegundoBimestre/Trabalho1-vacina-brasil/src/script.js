@@ -48,6 +48,39 @@ const gerarPagina3 = () => {
   document
     .getElementById("formulario")
     .setAttribute("onsubmit", "alert('Formulário enviado com sucesso!')");
+
+  gerarElemento({
+    tag: "label",
+    conteudo: "CPF<span class='asterisco'>*</span>",
+    idPai: "formulario",
+  });
+
+  gerarElemento({
+    tag: "input",
+    idPai: "formulario",
+    id: "inputCpf",
+  });
+
+  let inputCpf = document.getElementById("inputCpf");
+  inputCpf.setAttribute("placeholder", "___.___.___-__");
+  inputCpf.setAttribute("type", "text");
+  inputCpf.required = true;
+
+  gerarElemento({
+    tag: "label",
+    conteudo: "Data de nascimento<span class='asterisco'>*</span>",
+    idPai: "formulario",
+  });
+
+  gerarElemento({
+    tag: "input",
+    idPai: "formulario",
+    id: "inputNascimento",
+  });
+
+  let inputNascimento = document.getElementById("inputNascimento");
+  inputNascimento.setAttribute("type", "date");
+  inputNascimento.setAttribute("required", "true");
 };
 
 const gerarPagina2 = async () => {
@@ -156,7 +189,7 @@ const gerarElemento = ({ tag, id, idPai, classe, conteudo }) => {
   if (id) elemento.setAttribute("id", id);
   if (classe) elemento.setAttribute("class", classe);
 
-  if (conteudo) elemento.innerText = conteudo;
+  if (conteudo) elemento.innerHTML = conteudo;
 
   if (idPai) {
     let parent = document.getElementById(idPai);
