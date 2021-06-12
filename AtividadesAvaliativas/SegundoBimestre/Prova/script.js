@@ -7,6 +7,28 @@ const inicio = () => {
   document
     .getElementById("botao-adivinhar")
     .setAttribute("onclick", "adivinharNumero(0, 100)");
+
+  gerarInput("date", "nascimento", 'mostrarSigno()');
+};
+
+const mostrarSigno = () => {
+  let data = document.getElementById("nascimento").value;
+  console.log(data);
+};
+
+const gerarInput = (tipo, id, onclick, idPai) => {
+  let elemento = document.createElement("input");
+  elemento.setAttribute("id", id);
+  elemento.setAttribute("onclick", onclick);
+
+  if (tipo) elemento.setAttribute("type", tipo);
+
+  if (idPai) {
+    let parent = document.getElementById(idPai);
+    parent.append(elemento);
+  } else {
+    document.body.append(elemento);
+  }
 };
 
 const adivinharNumero = (primeiro, ultimo) => {
