@@ -9,8 +9,6 @@ const inicio = () => {
 };
 
 const gerarPagina3 = async (opcoesMarcadas) => {
-  // TODO: Exibir alerta se nada estiver selecionado ("Antes de prosseguir, você precisará selecionar uma opção! ")
-
   document.getElementById("principal").remove();
 
   gerarElemento({
@@ -255,6 +253,10 @@ const lerOpcoesMarcadas = () => {
     if (inputs[i].checked) {
       opcoesMarcadas += inputs[i].value + ", ";
     }
+  }
+  if (opcoesMarcadas === "") {
+    alert("Nada foi selecionado!");
+    throw "Selecione pelo menos um campo";
   }
   console.log(opcoesMarcadas);
   return opcoesMarcadas;
