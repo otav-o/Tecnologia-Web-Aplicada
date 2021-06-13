@@ -179,8 +179,49 @@ const gerarPagina2 = async () => {
     conteudo: await obterTxt("../alerta.txt"),
   });
 
-  // TODO: Consertar a formatação e agrupar por names
-  criarLabelsEInputs(await obterLinhas("../texto.txt"));
+  gerarElemento({
+    tag: "h2",
+    conteudo: "Qual o seu perfil?<br><br>",
+    idPai: "divSegunda",
+  });
+
+  gerarElemento({
+    tag: "h2",
+    conteudo: "<br><br>Por idade<br><br>",
+    idPai: "divSegunda",
+  });
+
+  criarLabelsEInputs(await obterLinhas("../textos/por_idade.txt"), "idade");
+
+  gerarElemento({
+    tag: "h2",
+    conteudo: "<br><br>Por Categoria Profissional<br><br>",
+    idPai: "divSegunda",
+  });
+
+  criarLabelsEInputs(
+    await obterLinhas("../textos/por_categoria_profissional.txt"),
+    "profissao"
+  );
+
+  gerarElemento({
+    tag: "h2",
+    conteudo: "<br><br>Por Etnia<br><br>",
+    idPai: "divSegunda",
+  });
+
+  criarLabelsEInputs(await obterLinhas("../textos/por_etnia.txt"), "etnia");
+
+  gerarElemento({
+    tag: "h2",
+    conteudo: "<br><br>Por Grupos Especiais<br><br>",
+    idPai: "divSegunda",
+  });
+
+  criarLabelsEInputs(
+    await obterLinhas("../textos/por_grupos_especiais.txt"),
+    "gruposEspeciais"
+  );
 
   gerarElemento({
     tag: "button",
@@ -281,12 +322,11 @@ const obterLinhas = async (arquivo) => {
   return texto.split("\n");
 };
 
-const criarLabelsEInputs = (linhas) => {
+const criarLabelsEInputs = (linhas, name) => {
   linhas.forEach((linha) => {
     criarInput({
       tipo: "radio",
-      // Está errado pois os names precisam ser diferentes
-      nome: "categoria",
+      nome: name,
       valor: linha,
       idPai: "divSegunda",
     });
