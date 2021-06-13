@@ -8,8 +8,7 @@ const inicio = () => {
   gerarPagina1();
 };
 
-const gerarPagina3 = async () => {
-  // TODO: Recuperar o conteúdo selecionado na página 2
+const gerarPagina3 = async (opcoesMarcadas) => {
   // TODO: Exibir alerta se nada estiver selecionado ("Antes de prosseguir, você precisará selecionar uma opção! ")
 
   document.getElementById("principal").remove();
@@ -33,8 +32,7 @@ const gerarPagina3 = async () => {
 
   gerarElemento({
     tag: "h1",
-    // TODO: Identificação + valor selecionado na tela anterior
-    conteudo: "Identificação",
+    conteudo: `Identificação - ${opcoesMarcadas}`,
     idPai: "divTerceira",
   });
 
@@ -240,9 +238,26 @@ const gerarPagina2 = async () => {
 
   document
     .getElementById("botaoTerceiraPagina")
-    .setAttribute("onclick", "gerarPagina3()");
+    .setAttribute("onclick", `gerarPagina3(lerOpcoesMarcadas())`);
 
   document.getElementById("voltar").setAttribute("onclick", "inicio()");
+};
+
+const lerOpcoesMarcadas = () => {
+  let inputs = [
+    ...document.getElementsByName("idade"),
+    ...document.getElementsByName("profissao"),
+    ...document.getElementsByName("etnia"),
+    ...document.getElementsByName("gruposEspeciais"),
+  ];
+  let opcoesMarcadas = "";
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].checked) {
+      opcoesMarcadas += inputs[i].value + ", ";
+    }
+  }
+  console.log(opcoesMarcadas);
+  return opcoesMarcadas;
 };
 
 const gerarPagina1 = () => {
