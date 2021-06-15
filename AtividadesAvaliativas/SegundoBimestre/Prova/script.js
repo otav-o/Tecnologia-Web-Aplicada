@@ -8,18 +8,114 @@ const inicio = () => {
     .getElementById("botao-adivinhar")
     .setAttribute("onclick", "adivinharNumero(0, 100)");
 
-  gerarInput("date", "nascimento", 'mostrarSigno()');
+  gerarInput("date", "nascimento", "mostrarSigno()");
 };
 
 const mostrarSigno = () => {
-  let data = document.getElementById("nascimento").value;
+  let data = new Date(
+    document.getElementById("nascimento").value
+  ).toLocaleDateString("pt-Br", {
+    month: "numeric",
+    day: "numeric",
+  });
   console.log(data);
+  mostrarImagem(data);
 };
 
-const gerarInput = (tipo, id, onclick, idPai) => {
+const mostrarImagem = (data) => {
+  console.log(data);
+  if (data > new Date("1/20") && data < new Date("2/19")) Exibir(signos[0]);
+  else if (data < new Date("21/3")) Exibir(signos[1]);
+  else if (data < new Date("20/4")) Exibir(signos[2]);
+  else if (data < new Date("22/5")) Exibir(signos[3]);
+  else if (data < new Date("22/6")) Exibir(signos[4]);
+  else if (data < new Date("24/7")) Exibir(signos[5]);
+  else if (data < new Date("24/8")) Exibir(signos[6]);
+  else if (data < new Date("24/9")) Exibir(signos[7]);
+  else if (data < new Date("24/10")) Exibir(signos[8]);
+  else if (data < new Date("23/11")) Exibir(signos[9]);
+  else if (data < new Date("22/12")) Exibir(signos[10]);
+  else if (data < new Date("20/1")) Exibir(signos[11]);
+
+  // Não funcionou!
+};
+
+const Exibir = (signo) => {
+  gerarElemento({ tag: "img", id: `imagem-signo-${signo.nome}` });
+  console.log(signo);
+  document
+    .getElementById(`imagem-signo-${signo.nome}`)
+    .setAttribute("src", `img/${signo.url}.jpg`);
+  gerarElemento({ tag: "p", conteudo: signo.nome + "\n" + signo.descricao });
+};
+
+const signos = [
+  {
+    nome: "Aquário",
+    url: "aquario",
+    descricao: "20 de Janeiro - 18 de Fevereiro",
+  },
+  {
+    nome: "Peixes",
+    url: "peixes",
+    descricao: "19 de Fevereiro - 20 de Março",
+  },
+  {
+    nome: "Áries",
+    url: "aries",
+    descricao: "21 de Março - 19 de Abril",
+  },
+  {
+    nome: "Touro",
+    url: "touro",
+    descricao: "20 de Abril - 20 de Maio",
+  },
+  {
+    nome: "Gêmeos",
+    url: "gemeos",
+    descricao: "21 de Maio - 20 de Junho",
+  },
+  {
+    nome: "Câncer",
+    url: "cancer",
+    descricao: "21 de Junho - 22 de Julho",
+  },
+  {
+    nome: "Leão",
+    url: "leao",
+    descricao: "23 de Julho - 22 de Agosto",
+  },
+  {
+    nome: "Virgem",
+    url: "virgem",
+    descricao: "23 de Agosto - 22 de Setembro",
+  },
+  {
+    nome: "Libra",
+    url: "libra",
+    descricao: "23 de Setembro - 22 de Outubro",
+  },
+  {
+    nome: "Escorpião",
+    url: "escorpiao",
+    descricao: "23 de Outubro - 21 de Novembro",
+  },
+  {
+    nome: "Sagitário",
+    url: "sagitario",
+    descricao: "22 de Novembro - 21 de Dezembro",
+  },
+  {
+    nome: "Capricórnio",
+    url: "capricornio",
+    descricao: "22 de Dezembro - 19 de Janeiro",
+  },
+];
+
+const gerarInput = (tipo, id, onchange, idPai) => {
   let elemento = document.createElement("input");
   elemento.setAttribute("id", id);
-  elemento.setAttribute("onclick", onclick);
+  elemento.setAttribute("onchange", onchange);
 
   if (tipo) elemento.setAttribute("type", tipo);
 
