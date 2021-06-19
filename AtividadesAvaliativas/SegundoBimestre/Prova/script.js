@@ -12,30 +12,28 @@ const inicio = () => {
 };
 
 const mostrarSigno = () => {
-  let data = new Date(
-    document.getElementById("nascimento").value
-  ).toLocaleDateString("pt-Br", {
-    month: "numeric",
-    day: "numeric",
-  });
+  let data = new Date(document.getElementById("nascimento").value);
   console.log(data);
   mostrarImagem(data);
+
+  data = new Date(data.getMilliseconds);
 };
 
 const mostrarImagem = (data) => {
   console.log(data);
-  if (data > new Date("1/20") && data < new Date("2/19")) Exibir(signos[0]);
-  else if (data < new Date("21/3")) Exibir(signos[1]);
-  else if (data < new Date("20/4")) Exibir(signos[2]);
-  else if (data < new Date("22/5")) Exibir(signos[3]);
-  else if (data < new Date("22/6")) Exibir(signos[4]);
-  else if (data < new Date("24/7")) Exibir(signos[5]);
-  else if (data < new Date("24/8")) Exibir(signos[6]);
-  else if (data < new Date("24/9")) Exibir(signos[7]);
-  else if (data < new Date("24/10")) Exibir(signos[8]);
-  else if (data < new Date("23/11")) Exibir(signos[9]);
-  else if (data < new Date("22/12")) Exibir(signos[10]);
-  else if (data < new Date("20/1")) Exibir(signos[11]);
+  if (data > new Date("2021/1/20") && data < new Date("19/2"))
+    Exibir(signos[0]);
+  else if (data < new Date("2021/3/21")) Exibir(signos[1]);
+  else if (data < new Date("2021/4/20")) Exibir(signos[2]);
+  else if (data < new Date("2021/5/22")) Exibir(signos[3]);
+  else if (data < new Date("2021/6/22")) Exibir(signos[4]);
+  else if (data < new Date("2021/7/24")) Exibir(signos[5]);
+  else if (data < new Date("2021/8/24")) Exibir(signos[6]);
+  else if (data < new Date("2021/9/24")) Exibir(signos[7]);
+  else if (data < new Date("2021/10/24")) Exibir(signos[8]);
+  else if (data < new Date("2021/11/23")) Exibir(signos[9]);
+  else if (data < new Date("2021/12/22")) Exibir(signos[10]);
+  else if (data < new Date("2021/1/20")) Exibir(signos[11]);
 
   // Não funcionou!
 };
